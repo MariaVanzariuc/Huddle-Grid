@@ -1,3 +1,3 @@
 # Huddle - Grid
 
-Live preview:
+Live preview:https://huddle-grid-mariav.netlify.app/
