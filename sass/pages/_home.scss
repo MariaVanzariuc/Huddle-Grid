@@ -1,0 +1,17 @@
+.about {
+  background-color: yellowgreen;
+  grid-column: 3 / 9;
+  grid-row: 4/5;
+}
+
+.features {
+  background-color: brown;
+  grid-column: 1 / -1;
+  grid-row: 5/6;
+}
+
+.register {
+  background-color: antiquewhite;
+  grid-column: 4 / 7;
+  grid-row: 6/7;
+}
