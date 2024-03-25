@@ -1,5 +1,16 @@
 .header {
-  background-color: aqua;
   grid-column: 2 / 10;
   grid-row: 2/3;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  &__logo {
+    width: 17rem;
+  }
+
+  &__btn {
+    justify-self: end;
+  }
 }
