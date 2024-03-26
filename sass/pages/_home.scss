@@ -1,7 +1,57 @@
 .about {
-  background-color: yellowgreen;
-  grid-column: 3 / 9;
+  grid-column: 3 / 11;
   grid-row: 4/5;
+
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  gap: 10rem;
+
+  &__info {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    gap: 2rem;
+
+    &__text {
+      font-size: 2rem;
+      text-align: center;
+      width: 51rem;
+      justify-self: center;
+    }
+
+    &__btn {
+      justify-self: center;
+      margin-top: 1rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    justify-items: center;
+    gap: 24rem;
+
+    &__comm {
+      display: grid;
+      grid-template-rows: repeat(3, min-content);
+      justify-items: center;
+
+      &__img {
+        width: 6rem;
+        justify-self: start;
+      }
+
+      &__text {
+        font-size: 2.6rem;
+        font-family: "Poppins";
+        text-align: center;
+        color: var(--color-grey);
+      }
+    }
+  }
 }
 
 .features {
@@ -12,6 +62,6 @@
 
 .register {
   background-color: antiquewhite;
-  grid-column: 4 / 7;
+  grid-column: 4 / 10;
   grid-row: 6/7;
 }

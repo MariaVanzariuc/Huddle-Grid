@@ -22,16 +22,29 @@ body {
 .container {
   display: grid;
   grid-template-rows: 4rem min-content 10rem repeat(3, min-content);
-  grid-template-columns: minmax(min-content, 0.5fr) repeat(8, minmax(min-content, 1fr)) minmax(min-content, 0.5fr); }
+  grid-template-columns: minmax(min-content, 0.5fr) repeat(10, minmax(min-content, 1fr)) minmax(min-content, 0.5fr) []; }
 
 body {
   font-family: "Open-Sans";
   font-weight: 400; }
 
+.heading-1 {
+  font-size: 10rem;
+  color: var(--color-neutral-dark);
+  font-family: "Poppins";
+  font-weight: 600; }
+
+.heading-2 {
+  font-size: 5.2rem;
+  color: var(--color-neutral-dark);
+  font-family: "Poppins";
+  text-align: center; }
+
 .btn {
   font-size: 2rem;
   font-family: "Poppins";
   font-weight: 600;
+  text-align: center;
   background-color: var(--color-primary);
   color: #fff;
   padding: 2.5rem 10rem;
@@ -61,7 +74,7 @@ body {
   grid-row: 7/8; }
 
 .header {
-  grid-column: 2 / 10;
+  grid-column: 2 / 12;
   grid-row: 2/3;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -72,9 +85,42 @@ body {
     justify-self: end; }
 
 .about {
-  background-color: yellowgreen;
-  grid-column: 3 / 9;
-  grid-row: 4/5; }
+  grid-column: 3 / 11;
+  grid-row: 4/5;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  gap: 10rem; }
+  .about__info {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    gap: 2rem; }
+    .about__info__text {
+      font-size: 2rem;
+      text-align: center;
+      width: 51rem;
+      justify-self: center; }
+    .about__info__btn {
+      justify-self: center;
+      margin-top: 1rem; }
+  .about__image {
+    width: 100%; }
+  .about__details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    justify-items: center;
+    gap: 24rem; }
+    .about__details__comm {
+      display: grid;
+      grid-template-rows: repeat(3, min-content);
+      justify-items: center; }
+      .about__details__comm__img {
+        width: 6rem;
+        justify-self: start; }
+      .about__details__comm__text {
+        font-size: 2.6rem;
+        font-family: "Poppins";
+        text-align: center;
+        color: var(--color-grey); }
 
 .features {
   background-color: brown;
@@ -83,5 +129,5 @@ body {
 
 .register {
   background-color: antiquewhite;
-  grid-column: 4 / 7;
+  grid-column: 4 / 10;
   grid-row: 6/7; }

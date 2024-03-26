@@ -18,6 +18,6 @@ body {
   display: grid;
   grid-template-rows: 4rem min-content 10rem repeat(3, min-content);
   grid-template-columns:
-    minmax(min-content, 0.5fr) repeat(8, minmax(min-content, 1fr))
-    minmax(min-content, 0.5fr);
+    minmax(min-content, 0.5fr) repeat(10, minmax(min-content, 1fr))
+    minmax(min-content, 0.5fr) [];
 }
