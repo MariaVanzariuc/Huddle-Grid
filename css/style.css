@@ -132,7 +132,8 @@ body {
   grid-column: 1 / -1;
   grid-row: 5/6;
   display: grid;
-  grid-template-rows: repeat(3, min-content); }
+  grid-template-rows: repeat(3, min-content);
+  margin-bottom: 14rem; }
 
 .feature {
   display: grid;
@@ -163,6 +164,11 @@ body {
       justify-self: center; }
 
 .register {
-  background-color: antiquewhite;
   grid-column: 4 / 10;
-  grid-row: 6/7; }
+  grid-row: 6/7;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  gap: 3rem;
+  margin-bottom: 14rem; }
+  .register__btn {
+    justify-self: center; }
