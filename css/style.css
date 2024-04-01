@@ -45,6 +45,12 @@ body {
   color: var(--color-neutral-dark);
   font-family: "Poppins"; }
 
+.heading-4 {
+  font-size: 3rem;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-weight: 500; }
+
 .btn {
   font-size: 2rem;
   font-family: "Poppins";
@@ -72,11 +78,87 @@ body {
       background-color: #fff;
       color: var(--color-primary-light);
       border: 1px solid var(--color-primary-light); }
+  .btn--footer {
+    font-size: 1.8rem;
+    border-radius: 5px;
+    padding: 1.5rem 5rem; }
 
 .footer {
-  background-color: red;
   grid-column: 1 / -1;
-  grid-row: 7/8; }
+  grid-row: 7/8;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  color: #fff; }
+  .footer__img-desktop {
+    width: 100%; }
+  .footer__content {
+    background-color: var(--color-neutral-dark);
+    padding: 10rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 12rem;
+    padding-bottom: 5rem; }
+    .footer__content__info {
+      display: grid;
+      grid-template-rows: repeat(5, min-content);
+      gap: 2rem; }
+      .footer__content__info__logo {
+        width: 15vw; }
+      .footer__content__info__p {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        width: 41ch; }
+      .footer__content__info__phone {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        gap: 1.5rem;
+        font-size: 1.8rem;
+        align-items: center; }
+        .footer__content__info__phone i {
+          font-size: 1.8rem; }
+      .footer__content__info__icons {
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+        gap: 2rem;
+        transition: all 0.2s;
+        cursor: pointer;
+        margin-top: 4rem; }
+        .footer__content__info__icons i {
+          font-size: 3.6rem; }
+          .footer__content__info__icons i:active {
+            color: aqua; }
+    .footer__content__newsletter {
+      display: grid;
+      grid-template-rows: repeat(3, min-content);
+      gap: 1rem; }
+      .footer__content__newsletter__text {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        width: 40ch;
+        margin-bottom: 3rem; }
+      .footer__content__newsletter__form {
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        gap: 5rem; }
+        .footer__content__newsletter__form__input-container {
+          position: relative; }
+          .footer__content__newsletter__form__input-container__input {
+            font-size: 1.8rem;
+            color: #555;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 30rem;
+            padding: 2rem 0 2rem 1rem; }
+            .footer__content__newsletter__form__input-container__input__error-message {
+              position: absolute;
+              display: none;
+              top: 7rem;
+              color: var(--color-secondary);
+              font-size: 1.4rem; }
+            .footer__content__newsletter__form__input-container__input:invalid:focus ~ .footer__content__newsletter__form__input-container__input__error-message {
+              display: block; }
 
 .header {
   grid-column: 2 / 12;
@@ -169,6 +251,7 @@ body {
   display: grid;
   grid-template-rows: repeat(2, min-content);
   gap: 3rem;
-  margin-bottom: 14rem; }
+  justify-content: center;
+  margin-bottom: 16rem; }
   .register__btn {
     justify-self: center; }

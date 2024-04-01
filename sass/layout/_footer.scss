@@ -1,5 +1,112 @@
 .footer {
-  background-color: red;
   grid-column: 1 / -1;
   grid-row: 7/8;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+
+  color: #fff;
+
+  &__img-desktop {
+    width: 100%;
+  }
+
+  &__content {
+    background-color: var(--color-neutral-dark);
+    padding: 10rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 12rem;
+    padding-bottom: 5rem;
+
+    &__info {
+      display: grid;
+      grid-template-rows: repeat(5, min-content);
+      gap: 2rem;
+
+      &__logo {
+        width: 15vw;
+      }
+
+      &__p {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        width: 41ch;
+      }
+
+      &__phone {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        gap: 1.5rem;
+        font-size: 1.8rem;
+        align-items: center;
+
+        i {
+          font-size: 1.8rem;
+        }
+      }
+
+      &__icons {
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+        gap: 2rem;
+        transition: all 0.2s;
+        cursor: pointer;
+        margin-top: 4rem;
+
+        i {
+          font-size: 3.6rem;
+
+          &:active {
+            color: aqua;
+          }
+        }
+      }
+    }
+
+    &__newsletter {
+      display: grid;
+      grid-template-rows: repeat(3, min-content);
+      gap: 1rem;
+
+      &__text {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        width: 40ch;
+        margin-bottom: 3rem;
+      }
+
+      &__form {
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        gap: 5rem;
+
+        &__input-container {
+          position: relative;
+
+          &__input {
+            font-size: 1.8rem;
+            color: #555;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 30rem;
+            padding: 2rem 0 2rem 1rem;
+
+            &__error-message {
+              position: absolute;
+              display: none;
+              top: 7rem;
+              color: var(--color-secondary);
+              font-size: 1.4rem;
+            }
+            &:invalid:focus
+              ~ .footer__content__newsletter__form__input-container__input__error-message {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
 }

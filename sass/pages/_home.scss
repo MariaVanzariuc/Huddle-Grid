@@ -112,8 +112,9 @@
   display: grid;
   grid-template-rows: repeat(2, min-content);
   gap: 3rem;
+  justify-content: center;
 
-  margin-bottom: 14rem;
+  margin-bottom: 16rem;
 
   &__btn {
     justify-self: center;
