@@ -304,7 +304,7 @@ body {
         width: 14rem; } }
     @media only screen and (max-width: 26.6em) {
       .header__logo {
-        width: 15rem; } }
+        width: 17rem; } }
   .header__btn {
     justify-self: end; }
 
@@ -420,7 +420,7 @@ body {
             width: 49ch; } }
         @media only screen and (max-width: 26.6em) {
           .feature__content__text__p {
-            width: 32ch;
+            width: 46ch;
             text-align: center;
             font-size: 2.2rem; } }
     .feature__content__picture {
@@ -429,7 +429,7 @@ body {
       @media only screen and (max-width: 26.6em) {
         .feature__content__picture {
           grid-row: 1/2;
-          width: 45vw; } }
+          width: 50vw; } }
 
 .register {
   grid-column: 4 / 10;
