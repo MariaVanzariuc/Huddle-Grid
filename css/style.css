@@ -1,3 +1,16 @@
+/*
+375px;         Mobile M
+425px;           Mobile L
+768px;         Tablet 
+1024px;        Laptop
+1440;          Normal view -deesktop
+
+
+$breakpoint argument choices:
+- laptop
+
+1em=16px
+*/
 :root {
   --color-primary: hsl(322, 100%, 66%);
   --color-primary-light: hsl(321, 100%, 78%);
@@ -15,6 +28,15 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 64em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 48em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 26.6em) {
+    html {
+      font-size: 37.5%; } }
 
 body {
   box-sizing: border-box; }
@@ -22,34 +44,70 @@ body {
 .container {
   display: grid;
   grid-template-rows: 4rem min-content 10rem repeat(3, min-content);
-  grid-template-columns: minmax(min-content, 0.5fr) repeat(10, minmax(min-content, 1fr)) minmax(min-content, 0.5fr) []; }
+  grid-template-columns: minmax(min-content, 0.5fr) repeat(10, minmax(min-content, 1fr)) minmax(min-content, 0.5fr); }
+  @media only screen and (max-width: 48em) {
+    .container {
+      grid-template-rows: 4rem min-content 14rem repeat(3, min-content); } }
 
 body {
   font-family: "Open-Sans";
   font-weight: 400; }
 
 .heading-1 {
-  font-size: 10rem;
+  font-size: 9.8rem;
   color: var(--color-neutral-dark);
   font-family: "Poppins";
   font-weight: 600; }
+  @media only screen and (max-width: 64em) {
+    .heading-1 {
+      font-size: 8.6rem; } }
+  @media only screen and (max-width: 48em) {
+    .heading-1 {
+      font-size: 7.4rem; } }
 
 .heading-2 {
-  font-size: 5.2rem;
+  font-size: 4.4rem;
   color: var(--color-neutral-dark);
   font-family: "Poppins";
   text-align: center; }
+  @media only screen and (max-width: 64em) {
+    .heading-2 {
+      font-size: 3.6rem; } }
+  @media only screen and (max-width: 48em) {
+    .heading-2 {
+      font-size: 3rem; } }
+  @media only screen and (max-width: 26.6em) {
+    .heading-2 {
+      font-size: 3.8rem; } }
 
 .heading-3 {
-  font-size: 4.5rem;
+  font-size: 3.6rem;
   color: var(--color-neutral-dark);
   font-family: "Poppins"; }
+  @media only screen and (max-width: 64em) {
+    .heading-3 {
+      font-size: 3rem; } }
+  @media only screen and (max-width: 48em) {
+    .heading-3 {
+      font-size: 2.8rem; } }
+  @media only screen and (max-width: 26.6em) {
+    .heading-3 {
+      font-size: 3.2rem; } }
 
 .heading-4 {
   font-size: 3rem;
   font-family: "Poppins";
   text-transform: uppercase;
   font-weight: 500; }
+  @media only screen and (max-width: 64em) {
+    .heading-4 {
+      font-size: 2.4rem; } }
+  @media only screen and (max-width: 48em) {
+    .heading-4 {
+      font-size: 2rem; } }
+  @media only screen and (max-width: 26.6em) {
+    .heading-4 {
+      font-size: 3rem; } }
 
 .btn {
   font-size: 2rem;
@@ -64,6 +122,12 @@ body {
   cursor: pointer;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   transition: all 0.2s; }
+  @media only screen and (max-width: 64em) {
+    .btn {
+      padding: 2.2rem 9rem; } }
+  @media only screen and (max-width: 48em) {
+    .btn {
+      padding: 2rem 8rem; } }
   .btn:active {
     background-color: var(--color-primary-light); }
   .btn--outline {
@@ -74,6 +138,13 @@ body {
     border: 1px solid var(--color-primary);
     padding: 0.4rem 2.4rem;
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1); }
+    @media only screen and (max-width: 48em) {
+      .btn--outline {
+        padding: 0.2rem 2.2rem; } }
+    @media only screen and (max-width: 26.6em) {
+      .btn--outline {
+        padding: 0.4rem 2.4rem;
+        font-size: 2rem; } }
     .btn--outline:active {
       background-color: #fff;
       color: var(--color-primary-light);
@@ -82,6 +153,10 @@ body {
     font-size: 1.8rem;
     border-radius: 5px;
     padding: 1.5rem 5rem; }
+    @media only screen and (max-width: 48em) {
+      .btn--footer {
+        padding: 1.2rem 4.5rem;
+        justify-self: end; } }
 
 .footer {
   grid-column: 1 / -1;
@@ -90,58 +165,105 @@ body {
   grid-template-rows: repeat(2, min-content);
   color: #fff; }
   .footer__img-desktop {
-    width: 100%; }
+    width: 100%;
+    display: block; }
+    @media only screen and (max-width: 26.6em) {
+      .footer__img-desktop {
+        display: none; } }
+  .footer__img-mobile {
+    width: 100%;
+    display: none; }
+    @media only screen and (max-width: 26.6em) {
+      .footer__img-mobile {
+        display: block; } }
   .footer__content {
     background-color: var(--color-neutral-dark);
-    padding: 10rem 0 0 0;
+    padding: 10rem 0 5rem 0;
     display: grid;
     grid-template-columns: repeat(2, min-content);
     justify-content: space-evenly;
     align-content: center;
-    gap: 12rem;
-    padding-bottom: 5rem; }
+    gap: 12rem; }
+    @media only screen and (max-width: 26.6em) {
+      .footer__content {
+        grid-template-columns: 1fr;
+        padding: 10rem 7rem 5rem; } }
+    @media only screen and (max-width: 64em) {
+      .footer__content {
+        justify-content: center;
+        gap: 10rem; } }
     .footer__content__info {
       display: grid;
       grid-template-rows: repeat(5, min-content);
       gap: 2rem; }
       .footer__content__info__logo {
-        width: 15vw; }
+        width: 15rem; }
+        @media only screen and (max-width: 26.6em) {
+          .footer__content__info__logo {
+            width: 20rem; } }
       .footer__content__info__p {
         font-size: 1.8rem;
         line-height: 1.5;
         width: 41ch; }
+        @media only screen and (max-width: 26.6em) {
+          .footer__content__info__p {
+            font-size: 2.2rem;
+            width: 100%; } }
       .footer__content__info__phone {
         display: grid;
         grid-template-columns: min-content 1fr;
         gap: 1.5rem;
         font-size: 1.8rem;
         align-items: center; }
+        @media only screen and (max-width: 26.6em) {
+          .footer__content__info__phone {
+            font-size: 2.2rem; } }
         .footer__content__info__phone i {
           font-size: 1.8rem; }
+          @media only screen and (max-width: 26.6em) {
+            .footer__content__info__phone i {
+              font-size: 2.2rem; } }
       .footer__content__info__icons {
         display: grid;
         grid-template-columns: repeat(3, min-content);
         gap: 2rem;
         transition: all 0.2s;
-        cursor: pointer;
         margin-top: 4rem; }
+        @media only screen and (max-width: 26.6em) {
+          .footer__content__info__icons {
+            gap: 3rem; } }
         .footer__content__info__icons i {
-          font-size: 3.6rem; }
-          .footer__content__info__icons i:active {
+          font-size: 3.6rem;
+          cursor: pointer; }
+          @media only screen and (max-width: 26.6em) {
+            .footer__content__info__icons i {
+              font-size: 4rem; } }
+          .footer__content__info__icons i:hover {
             color: aqua; }
     .footer__content__newsletter {
       display: grid;
       grid-template-rows: repeat(3, min-content);
       gap: 1rem; }
+      @media only screen and (max-width: 26.6em) {
+        .footer__content__newsletter {
+          grid-row: 1/2; } }
       .footer__content__newsletter__text {
         font-size: 1.8rem;
         line-height: 1.5;
         width: 40ch;
         margin-bottom: 3rem; }
+        @media only screen and (max-width: 26.6em) {
+          .footer__content__newsletter__text {
+            font-size: 2.2rem;
+            width: 100%; } }
       .footer__content__newsletter__form {
         display: grid;
         grid-template-columns: repeat(2, min-content);
         gap: 5rem; }
+        @media only screen and (max-width: 48em) {
+          .footer__content__newsletter__form {
+            grid-template-columns: 1fr;
+            gap: 1.5rem; } }
         .footer__content__newsletter__form__input-container {
           position: relative; }
           .footer__content__newsletter__form__input-container__input {
@@ -151,12 +273,21 @@ body {
             cursor: pointer;
             width: 30rem;
             padding: 2rem 0 2rem 1rem; }
+            @media only screen and (max-width: 48em) {
+              .footer__content__newsletter__form__input-container__input {
+                width: 100%; } }
+            @media only screen and (max-width: 26.6em) {
+              .footer__content__newsletter__form__input-container__input {
+                padding: 1.5rem 0 1.5rem 1rem; } }
             .footer__content__newsletter__form__input-container__input__error-message {
               position: absolute;
               display: none;
               top: 7rem;
               color: var(--color-secondary);
               font-size: 1.4rem; }
+              @media only screen and (max-width: 26.6em) {
+                .footer__content__newsletter__form__input-container__input__error-message {
+                  font-size: 1.8rem; } }
             .footer__content__newsletter__form__input-container__input:invalid:focus ~ .footer__content__newsletter__form__input-container__input__error-message {
               display: block; }
 
@@ -168,6 +299,12 @@ body {
   align-items: center; }
   .header__logo {
     width: 17rem; }
+    @media only screen and (max-width: 48em) {
+      .header__logo {
+        width: 14rem; } }
+    @media only screen and (max-width: 26.6em) {
+      .header__logo {
+        width: 15rem; } }
   .header__btn {
     justify-self: end; }
 
@@ -182,11 +319,18 @@ body {
     display: grid;
     grid-template-rows: repeat(3, min-content);
     gap: 2rem; }
+    @media only screen and (max-width: 26.6em) {
+      .about__info {
+        gap: 3rem; } }
     .about__info__text {
       font-size: 2rem;
       text-align: center;
       width: 51ch;
       justify-self: center; }
+      @media only screen and (max-width: 26.6em) {
+        .about__info__text {
+          font-size: 2.5rem;
+          width: 36ch; } }
     .about__info__btn {
       justify-self: center;
       margin-top: 1rem; }
@@ -194,9 +338,12 @@ body {
     width: 100%; }
   .about__details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     justify-items: center;
     gap: 24rem; }
+    @media only screen and (max-width: 26.6em) {
+      .about__details {
+        gap: 12rem; } }
     .about__details__comm {
       display: grid;
       grid-template-rows: repeat(3, min-content);
@@ -204,11 +351,17 @@ body {
       .about__details__comm__img {
         width: 6rem;
         justify-self: start; }
+        @media only screen and (max-width: 64em) {
+          .about__details__comm__img {
+            width: 4.8rem; } }
       .about__details__comm__text {
         font-size: 2.6rem;
         font-family: "Poppins";
         text-align: center;
         color: var(--color-grey); }
+        @media only screen and (max-width: 64em) {
+          .about__details__comm__text {
+            font-size: 2rem; } }
 
 .features {
   grid-column: 1 / -1;
@@ -221,29 +374,62 @@ body {
   display: grid;
   grid-template-rows: repeat(3, min-content); }
   .feature__img-desktop {
-    width: 100%; }
+    width: 100%;
+    display: block; }
+    @media only screen and (max-width: 26.6em) {
+      .feature__img-desktop {
+        display: none; } }
+  .feature__img-mobile {
+    width: 100%;
+    display: none; }
+    @media only screen and (max-width: 26.6em) {
+      .feature__img-mobile {
+        display: block; } }
   .feature__content {
     display: grid;
     grid-template-columns: repeat(2, min-content);
     padding: 7rem 0;
     background-color: var(--color-neutral-pale);
     justify-content: space-evenly; }
+    @media only screen and (max-width: 26.6em) {
+      .feature__content {
+        grid-template-columns: 1fr;
+        gap: 8rem; } }
     .feature__content__mid {
       background-color: #fff;
       margin-top: 13rem;
       margin-bottom: 18rem; }
+      @media only screen and (max-width: 64em) {
+        .feature__content__mid {
+          margin-top: 10rem;
+          margin-bottom: 10rem; } }
     .feature__content__text {
       display: grid;
       grid-template-rows: repeat(2, min-content);
       gap: 2rem;
       align-content: center;
       justify-content: center; }
+      @media only screen and (max-width: 26.6em) {
+        .feature__content__text {
+          justify-items: center; } }
       .feature__content__text__p {
         font-size: 2rem;
         width: 53ch; }
+        @media only screen and (max-width: 48em) {
+          .feature__content__text__p {
+            width: 49ch; } }
+        @media only screen and (max-width: 26.6em) {
+          .feature__content__text__p {
+            width: 32ch;
+            text-align: center;
+            font-size: 2.2rem; } }
     .feature__content__picture {
       width: 30vw;
       justify-self: center; }
+      @media only screen and (max-width: 26.6em) {
+        .feature__content__picture {
+          grid-row: 1/2;
+          width: 45vw; } }
 
 .register {
   grid-column: 4 / 10;
@@ -251,7 +437,8 @@ body {
   display: grid;
   grid-template-rows: repeat(2, min-content);
   gap: 3rem;
-  justify-content: center;
   margin-bottom: 16rem; }
+  .register__title {
+    text-align: center; }
   .register__btn {
     justify-self: center; }

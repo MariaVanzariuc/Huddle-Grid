@@ -8,6 +8,14 @@
 
   &__logo {
     width: 17rem;
+
+    @include respond(tablet) {
+      width: 14rem;
+    }
+
+    @include respond(mobile-l) {
+      width: 15rem;
+    }
   }
 
   &__btn {

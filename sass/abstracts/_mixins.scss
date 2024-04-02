@@ -1,0 +1,33 @@
+//MEDIA QUERY MANAGER
+/*
+375px;         Mobile M
+425px;           Mobile L
+768px;         Tablet 
+1024px;        Laptop
+1440;          Normal view -deesktop
+
+
+$breakpoint argument choices:
+- laptop
+
+1em=16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile-l {
+    @media only screen and (max-width: 26.6em) {
+      @content;
+    }
+  } //425px
+
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 48em) {
+      @content;
+    }
+  } //768px
+
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 64em) {
+      @content;
+    }
+  } //1024px
+}

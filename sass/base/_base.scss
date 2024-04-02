@@ -8,6 +8,22 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond(laptop) {
+    font-size: 56.25%; //1rem =9px, 9/16=56.25%
+  }
+
+  @include respond(tablet) {
+    font-size: 50%; //1rem =8px, 8/16=50%
+  }
+
+  @include respond(mobile-l) {
+    font-size: 37.5%; //1rem =6px, 6/16=37.5%
+  }
+
+  @include respond(mobile-m) {
+    font-size: 25%; //1rem =4px, 4/16=25%
+  }
 }
 
 body {
@@ -19,5 +35,9 @@ body {
   grid-template-rows: 4rem min-content 10rem repeat(3, min-content);
   grid-template-columns:
     minmax(min-content, 0.5fr) repeat(10, minmax(min-content, 1fr))
-    minmax(min-content, 0.5fr) [];
+    minmax(min-content, 0.5fr);
+
+  @include respond(tablet) {
+    grid-template-rows: 4rem min-content 14rem repeat(3, min-content);
+  }
 }
